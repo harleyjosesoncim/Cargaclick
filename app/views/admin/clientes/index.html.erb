@@ -1,0 +1,35 @@
+<h1 class="text-2xl font-bold mb-6">Clientes</h1>
+<div class="mb-4">
+  <%= link_to 'Novo Cliente', new_admin_cliente_path, class: 'bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700' %>
+</div>
+
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white border border-gray-300 rounded shadow">
+    <thead class="bg-gray-100 text-gray-700">
+      <tr>
+        <th class="px-4 py-2 text-left">Nome</th>
+        <th class="px-4 py-2 text-left">CPF</th>
+        <th class="px-4 py-2 text-left">CEP Destino</th>
+        <th class="px-4 py-2 text-left">Tipo de Carga</th>
+        <th class="px-4 py-2 text-left">Descarregar em</th>
+        <th class="px-4 py-2 text-left">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @clientes.each do |c| %>
+        <tr class="border-t">
+          <td class="px-4 py-2"><%= c.nome %></td>
+          <td class="px-4 py-2"><%= c.cpf %></td>
+          <td class="px-4 py-2"><%= c.cep_destino %></td>
+          <td class="px-4 py-2"><%= c.tipo_carga %></td>
+          <td class="px-4 py-2"><%= c.descarregar_em %></td>
+          <td class="px-4 py-2 space-x-2">
+            <%= link_to 'Editar', edit_admin_cliente_path(c), class: 'text-indigo-600 hover:underline' %>
+            <%= link_to 'Excluir', admin_cliente_path(c), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'text-red-600 hover:underline' %>
+            <%= link_to 'Simular Frete', simular_frete_admin_cliente_path(c), class: 'text-green-600 hover:underline' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

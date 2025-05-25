@@ -1,0 +1,44 @@
+<form id="payment-form">
+  <label class="block">
+    Valor (em centavos):
+    <input type="number" name="amount" required class="mt-1 block w-full" />
+  </label>
+  <label class="block mt-4">
+    Descrição:
+    <input type="text" name="description" required class="mt-1 block w-full" />
+  </label>
+  <label class="block mt-4">
+    Gateway:
+    <select name="provider" class="mt-1 block w-full">
+      <option value="efibank">EfiBank</option>
+      <option value="stripe">Stripe</option>
+      <option value="mercadopago">Mercado Pago</option>
+    </select>
+  </label>
+  <button type="submit" class="mt-6 px-4 py-2 bg-blue-600 text-white rounded">Pagar</button>
+</form>
+
+<script>
+document.getElementById('payment-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const form = e.target;
+  const provider = form.provider.value;
+  const body = {
+    amount: form.amount.value,
+    description: form.description.value
+  };
+  const res = await fetch(`/payments/${provider}/create`, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(body)
+  });
+  const data = await res.json();
+  if (provider === 'stripe') {
+    window.location = data.checkout_url;
+  } else if (provider === 'mercadopago') {
+    window.location = data.init_point;
+  } else {
+    window.open(data.checkout_url || data.payment_url, '_blank');
+  }
+});
+</script>

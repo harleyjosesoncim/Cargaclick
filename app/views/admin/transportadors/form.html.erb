@@ -1,0 +1,30 @@
+<%= form_with(model: [:admin, @transportador]) do |form| %>
+  <%= form.label :nome %>
+  <%= form.text_field :nome %>
+
+  <%= form.label :cpf %>
+  <%= form.text_field :cpf %>
+
+  <%= form.label :endereco %>
+  <%= form.text_field :endereco %>
+
+  <%= form.label :cep %>
+  <%= form.text_field :cep %>
+
+  <%= form.label :numero_habilitacao %>
+  <%= form.text_field :numero_habilitacao %>
+
+  <%= form.label :tipo_veiculo %>
+  <%= form.text_field :tipo_veiculo %>
+
+  <%= form.label :capacidade_kg %>
+  <%= form.number_field :capacidade_kg %>
+
+  <%= form.label :tipo_cobranca %>
+  <%= form.select :tipo_cobranca, ['por_km', 'valor_fechado'] %>
+
+  <%= form.label :valor_cobranca %>
+  <%= form.number_field :valor_cobranca, step: 0.01 %>
+
+  <%= form.submit %>
+<% end %>

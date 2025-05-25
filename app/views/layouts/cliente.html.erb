@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Painel do Cliente</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <div class="flex min-h-screen">
+      <aside class="w-64 bg-white shadow-md p-4">
+        <h2 class="text-xl font-bold mb-4">CargoLink</h2>
+        <nav class="space-y-2">
+          <%= link_to 'Minhas Faturas', clientes_faturas_path, class: "block text-gray-700 hover:text-blue-600" %>
+          <%= link_to 'Meus Fretes', '#', class: "block text-gray-700 hover:text-blue-600" %>
+          <%= link_to 'Sair', destroy_cliente_session_path, method: :delete, class: "block text-red-600 hover:text-red-800 mt-6" %>
+        </nav>
+      </aside>
+      <main class="flex-1 p-6 bg-gray-50">
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>

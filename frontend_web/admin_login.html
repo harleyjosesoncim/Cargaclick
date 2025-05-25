@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Administrador</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded shadow-md w-96">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login Admin - CargoLink</h2>
+    <form id="loginForm" class="flex flex-col">
+      <label class="mb-2 font-semibold">Email</label>
+      <input type="email" name="email" class="border p-2 rounded mb-4" required />
+
+      <label class="mb-2 font-semibold">Senha</label>
+      <input type="password" name="password" class="border p-2 rounded mb-4" required />
+
+      <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Entrar</button>
+    </form>
+    <p id="statusMsg" class="mt-4 text-center text-red-500 font-medium"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const payload = {
+        email: formData.get("email"),
+        password: formData.get("password")
+      };
+
+      const response = await fetch("/admin/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "include",
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+      const statusMsg = document.getElementById("statusMsg");
+
+      if (response.ok) {
+        statusMsg.innerText = "Login realizado!";
+        window.location.href = "/admin_dashboard.html";
+      } else {
+        statusMsg.innerText = result.message || "Erro no login.";
+      }
+    });
+  </script>
+</body>
+</html>

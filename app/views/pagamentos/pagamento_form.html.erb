@@ -1,0 +1,17 @@
+<h1>Simulação de Pagamento</h1>
+
+<%= form_with url: pagamentos_path, method: :post, local: true do |form| %>
+  <div>
+    <label>Valor (R$):</label>
+    <%= number_field_tag :valor, 50.00, step: 0.01 %>
+  </div>
+
+  <div>
+    <label>Método de Pagamento:</label><br>
+    <%= radio_button_tag :metodo, 'pix', true %> Pix<br>
+    <%= radio_button_tag :metodo, 'boleto' %> Boleto Bancário<br>
+    <%= radio_button_tag :metodo, 'credito' %> Cartão de Crédito<br>
+  </div>
+
+  <%= submit_tag "Pagar Agora" %>
+<% end %>
