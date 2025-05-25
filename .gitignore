@@ -27,3 +27,6 @@ dist/
 # Dependências locais (se houver)
 .env
 *.local
+# Arquivos de configuração de ambiente
+.env
+.env.production
