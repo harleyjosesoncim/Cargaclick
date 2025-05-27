@@ -1,0 +1,45 @@
+[1] Executando: limpar_cargolink.bat 
+'limpar_cargolink.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: iniciar_cargolink.bat 
+'iniciar_cargolink.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: processar_video.py 
+Could not find platform independent libraries <prefix>
+python: can't open file 'C:\\Users\\User\\Documents\\cargaclik\\docs_assets\\processar_video.py': [Errno 2] No such file or directory
+[1] Executando: setup_guard_ci.bat 
+'setup_guard_ci.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+------------------------------- 
+ 
+========================= 
+RELATORIO FINAL - CARGACLIK 
+========================= 
+ 
+-- DEPENDENCIAS -- 
+node: 
+OK 
+npm: 
+OK 
+python: 
+OK 
+git: 
+OK 
+docker: 
+OK 
+netlify: 
+OK 
+ 
+-- VARIAVEIS DE AMBIENTE -- 
+NODE_ENV: 
+AUTO-FIX 
+RAILS_ENV: 
+AUTO-FIX 
+ 
+-- SCRIPTS EXECUTADOS -- 
+%S: 
+IGNORADO 
+ 
+===================================== 
+ TUDO CERTO 
+===================================== 

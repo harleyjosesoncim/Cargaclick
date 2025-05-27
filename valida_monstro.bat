@@ -24,6 +24,62 @@ set "RESULTS_DEP="
 set "RESULTS_ENV="
 set "RESULTS_SCRIPTS="
 set "ERROR=0"
+REM =========================
+REM EXECUTANDO SCRIPTS DO PROJETO
+REM =========================
+
+echo ========================= >> %LOG%
+echo 3) Executando scripts principais do projeto >> %LOG%
+echo ========================= >> %LOG%
+echo =========================
+echo 3) Executando scripts principais do projeto
+echo =========================
+
+set SCRIPTNUM=1
+
+for %%S in (%SCRIPTS%) do (
+    set "SCRIPT=%%S"
+    call :EXEC_SCRIPT
+    set /a SCRIPTNUM+=1
+)
+
+goto :RELATORIO
+
+:EXEC_SCRIPT
+REM Expande extensão corretamente com delayedexpansion
+setlocal enabledelayedexpansion
+set "EXT=!SCRIPT:~-4!"
+echo [!SCRIPTNUM!] Executando: !SCRIPT! >> %LOG%
+echo [!SCRIPTNUM!] Executando: !SCRIPT!
+if /I "!EXT!"==".bat" (
+    call "!SCRIPT!" >> %LOG% 2>&1
+) else if /I "!EXT!"==".py" (
+    %PYTHON_CMD% "!SCRIPT!" >> %LOG% 2>&1
+) else if /I "!EXT!"==".rb" (
+    %RUBY_CMD% "!SCRIPT!" >> %LOG% 2>&1
+) else (
+    echo Tipo de arquivo desconhecido: !SCRIPT! (ignorando) >> %LOG%
+    echo Tipo de arquivo desconhecido: !SCRIPT! (ignorando)
+    endlocal
+    set "RESULTS_SCRIPTS=!RESULTS_SCRIPTS!!SCRIPT!: IGNORADO;"
+    goto :EOF
+)
+if errorlevel 1 (
+    echo ************* ERRO EM !SCRIPT! ************* >> %LOG%
+    echo ************* ERRO EM !SCRIPT! *************
+    set "RESULTS_SCRIPTS=!RESULTS_SCRIPTS!!SCRIPT!: ERRO;"
+    set ERROR=1
+) else (
+    echo OK: !SCRIPT! executado com sucesso! >> %LOG%
+    echo OK: !SCRIPT! executado com sucesso!
+    set "RESULTS_SCRIPTS=!RESULTS_SCRIPTS!!SCRIPT!: OK;"
+)
+endlocal
+goto :EOF
+
+:RELATORIO
+REM (restante do script igual ao anterior, a partir do bloco do relatório final)
+
 
 REM =========================
 REM VERIFICACAO DE DEPENDENCIAS

@@ -61,3 +61,68 @@ Pressione qualquer tecla para continuar. . .
 [2/8] Verificando Bundler...
 Bundler ja instalado.
 [1] Executando: automate_all.bat 
+==============================================
+ Automa√ß√£o: Heroku vars, checagem e deploy
+==============================================
+Configurando variaveis Heroku a partir de .env.production...
+Definindo MP_ACCESS_TOKEN=sua-chave-do-mercado-pago...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo EFIBANK_CLIENT_ID=seu-client-id...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo EFIBANK_CLIENT_SECRET=sua-client-secret...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo EFIBANK_SANDBOX=true...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo DATABASE_URL=postgres://postgres:password@db:5432/postgres...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo RAILS_ENV=production...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo ORS_API_KEY=5b3ce3597851110001cf624830ee079da0ef6e1a4703ab7c5a7dec9ac4e24a86cbdda0da9683b4f9...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Variaveis configuradas no Heroku.
+
+Exibindo variaveis do topo de deploy_prod.bat:
+set GITHUB_REPO=git@github.com:HarleyJoseSoncim/Cargaclick.git
+set HEROKU_APP=cargaclick-backend
+set NETLIFY_SITE_ID=SEU_SITE_ID_NETLIFY
+set DOMAIN=cargaclick.com.br
+
+Executando deploy_prod.bat...
+
+=== 1. Preparando reposit√≥rio ===
+Limpando node_modules, builds e logs‚Ä¶
+
+Comitando altera√ß√µes‚Ä¶
+warning: in the working copy of 'valida_log_-05-2025_1908.txt', LF will be replaced by CRLF the next time Git touches it
+[main d942f7b] ¬≠∆í√ú√á Ready for production deploy
+ 1 file changed, 27 insertions(+)
+Push para GitHub‚Ä¶
+remote: This repository moved. Please use the new location:        
+remote:   git@github.com:harleyjosesoncim/Cargaclick.git        
+branch 'main' set up to track 'origin/main'.
+To github.com:HarleyJoseSoncim/Cargaclick.git
+   f5924ab..d942f7b  main -> main
+
+Deploy backend para Heroku‚Ä¶
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+
+Deploy landing (docs_assets) para Netlify‚Ä¶
+ ¬ª   Error: Project not found. Please rerun "netlify link"
+
+=== Automa√ß√£o concluida ===
+Pressione qualquer tecla para continuar. . . 
