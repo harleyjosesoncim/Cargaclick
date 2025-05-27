@@ -1,0 +1,20 @@
+Iniciando validacao em 27/05/2025 19:13:55,00 
+========================= 
+3) Executando scripts principais do projeto 
+========================= 
+[1] Executando: check_deploy_prereqs.bat 
+============================================
+Verificando pré-requisitos de deploy
+============================================
+Netlify CLI encontrado.
+[2] Executando: verificar_estrutura.bat 
+Verificando estrutura do projeto CargoLink...
+[OK] Gemfile encontrado
+[OK] config/routes.rb encontrado
+[OK] app/controllers/application_controller.rb encontrado
+[OK] Pasta de views encontrada
+[OK] Pasta de migrations encontrada
+
+=== Verificação concluída ===
+Pressione qualquer tecla para continuar. . . 
+[3] Executando: deploy_cargaclik.bat 
