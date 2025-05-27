@@ -18,3 +18,27 @@ Verificando estrutura do projeto CargoLink...
 === Verificação concluída ===
 Pressione qualquer tecla para continuar. . . 
 [3] Executando: deploy_cargaclik.bat 
+
+=== 1. Commitando e enviando para GitHub ===
+warning: in the working copy of 'valida_log_-05-2025_1908.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs_assets/valida_log_-05-2025_1908.txt', LF will be replaced by CRLF the next time Git touches it
+[main eca11e4] ­ƒÜÇ Deploy autom├ítico CargaClik
+ 4 files changed, 186 insertions(+)
+ create mode 100644 docs_assets/valida_log_-05-2025_1908.txt
+ create mode 100644 valida_log_-05-2025_1913.txt
+remote: This repository moved. Please use the new location:        
+remote:   git@github.com:harleyjosesoncim/Cargaclick.git        
+branch 'main' set up to track 'origin/main'.
+To github.com:HarleyJoseSoncim/Cargaclick.git
+   d942f7b..eca11e4  main -> main
+
+=== 2. Deploy backend no Heroku ===
+[ERRO] Heroku CLI não instalada. Instale e tente de novo
+Pressione qualquer tecla para continuar. . . 
+[4] Executando: super_deploy_cargaclik.bat 
+[ERRO] 
+Pressione qualquer tecla para continuar. . . 
+[5] Executando: run_cargaclik.bat 
+[2/8] Verificando Bundler...
+Bundler ja instalado.
+[6] Executando: automate_all.bat 
