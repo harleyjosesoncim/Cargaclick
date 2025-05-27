@@ -1,0 +1,36 @@
+Iniciando validacao em 27/05/2025 19:08:33,25 
+========================= 
+1) Checando dependencias  
+========================= 
+OK: node encontrado. 
+OK: npm encontrado. 
+OK: python encontrado. 
+OK: git encontrado. 
+OK: docker encontrado. 
+OK: netlify encontrado. 
+ 
+========================= 
+2) Checando variaveis de ambiente 
+========================= 
+AUTO-FIX: Variavel NODE_ENV nao estava definida, setada para "development". 
+AUTO-FIX: Variavel RAILS_ENV nao estava definida, setada para "development". 
+ 
+========================= 
+3) Executando scripts principais do projeto 
+========================= 
+[1] Executando: check_deploy_prereqs.bat 
+============================================
+Verificando pré-requisitos de deploy
+============================================
+Netlify CLI encontrado.
+[1] Executando: verificar_estrutura.bat 
+Verificando estrutura do projeto CargoLink...
+[OK] Gemfile encontrado
+[OK] config/routes.rb encontrado
+[OK] app/controllers/application_controller.rb encontrado
+[OK] Pasta de views encontrada
+[OK] Pasta de migrations encontrada
+
+=== Verificação concluída ===
+Pressione qualquer tecla para continuar. . . 
+[1] Executando: deploy_cargaclik.bat 
