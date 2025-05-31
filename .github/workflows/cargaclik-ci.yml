@@ -1,0 +1,50 @@
+name: Validação e Deploy do CargaClik
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: development
+      RAILS_ENV: development
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalar dependências Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+
+      - name: Instalar dependências Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: Validar dependências e scripts principais
+        run: |
+          chmod +x valida_monstro.sh
+          ./valida_monstro.sh
+
+      - name: Deploy (Netlify CLI)
+        if: success()
+        run: |
+          # Exemplo: publicar pasta build (mude para sua pasta final do frontend)
+          netlify deploy --prod --dir=./docs_assets --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
