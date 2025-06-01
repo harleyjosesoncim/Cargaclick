@@ -1,4 +1,4 @@
-bundle install
-git add Gemfile Gemfile.lock
-git commit -m "Ajusta Gemfile"
-git push origin main
+source "https://rubygems.org"
+
+gem "rails", "~> 7.0"
+gem "sqlite3"
