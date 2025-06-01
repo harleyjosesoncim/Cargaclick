@@ -1,3 +1,2 @@
 source "https://rubygems.org"
-gem "rails", "~> 7.0"
-gem "sqlite3"
+gem "rails", "~> 7.1.0"
