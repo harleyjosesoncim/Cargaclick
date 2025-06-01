@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Node / React Native
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Rails / Ruby
+.bundle/
+log/*.log
+tmp/
+*.sqlite3
+/.byebug_history
+
+# IDEs e editores
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Builds
+*.apk
+*.app
+build/
+dist/
+
+# Dependências locais (se houver)
+.env
+*.local
+# Arquivos de configuração de ambiente
+.env
+.env.production

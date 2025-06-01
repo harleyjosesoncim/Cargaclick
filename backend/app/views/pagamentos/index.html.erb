@@ -1,0 +1,34 @@
+<h1>Pagamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Usuário</th>
+      <th>Tipo</th>
+      <th>Status</th>
+      <th>Valor</th>
+      <th>Link</th>
+      <th>Gateway ID</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pagamentos.each do |pagamento| %>
+      <tr>
+        <td><%= pagamento.id %></td>
+        <td><%= pagamento.user.email %></td>
+        <td><%= pagamento.tipo %></td>
+        <td><%= pagamento.status %></td>
+        <td><%= number_to_currency(pagamento.valor) %></td>
+        <td><%= link_to 'Acessar', pagamento.link, target: "_blank" %></td>
+        <td><%= pagamento.gateway_id %></td>
+        <td><%= link_to 'Editar', edit_pagamento_path(pagamento) %></td>
+        <td><%= link_to 'Excluir', pagamento, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Novo Pagamento', new_pagamento_path %>

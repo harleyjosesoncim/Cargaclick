@@ -1,0 +1,6 @@
+v1.0.0 - 18/05/2025
+✔ Estrutura completa separada em módulos
+✔ Backend Rails
+✔ App Mobile React Native
+✔ Painel Administrativo
+✔ Rebranding completo para CargaClick

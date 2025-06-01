@@ -1,0 +1,20 @@
+<h1 class="text-xl font-bold mb-4">Simulação de Trajeto</h1>
+
+<div id="map" style="height: 500px;"></div>
+
+<script>
+  const origem = "<%= @origem %>".split(",").map(Number);
+  const destino = "<%= @destino %>".split(",").map(Number);
+
+  const map = L.map('map').setView(origem, 10);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data © OpenStreetMap contributors'
+  }).addTo(map);
+
+  const origemMarker = L.marker(origem).addTo(map).bindPopup("Origem").openPopup();
+  const destinoMarker = L.marker(destino).addTo(map).bindPopup("Destino");
+
+  const route = L.polyline([origem, destino], { color: 'blue' }).addTo(map);
+  map.fitBounds(route.getBounds());
+</script>

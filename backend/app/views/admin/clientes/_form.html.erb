@@ -1,0 +1,21 @@
+<%= form_with(model: [:admin, @cliente]) do |form| %>
+  <%= form.label :nome %>
+  <%= form.text_field :nome %>
+
+  <%= form.label :cpf %>
+  <%= form.text_field :cpf %>
+
+  <%= form.label :cep_destino %>
+  <%= form.text_field :cep_destino %>
+
+  <%= form.label :tipo_carga %>
+  <%= form.text_field :tipo_carga %>
+
+  <%= form.label :descricao %>
+  <%= form.text_area :descricao %>
+
+  <%= form.label :descarregar_em %>
+  <%= form.text_field :descarregar_em %>
+
+  <%= form.submit %>
+<% end %>

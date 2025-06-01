@@ -1,0 +1,52 @@
+
+<h1 class="text-2xl font-bold mb-6">Clientes</h1>
+
+<div class="flex justify-between items-center mb-4">
+  <%= link_to new_admin_cliente_path, class: 'inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700' do %>
+    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+    </svg>
+    Cadastrar Cliente
+  <% end %>
+
+  <%= link_to admin_root_path, class: 'inline-flex items-center px-4 py-2 bg-gray-500 text-white text-sm font-medium rounded hover:bg-gray-600' do %>
+    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+    Voltar
+  <% end %>
+</div>
+
+<table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Nome</th>
+      <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Email</th>
+      <th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr class="border-b">
+        <td class="px-6 py-4 text-sm text-gray-900"><%= cliente.nome %></td>
+        <td class="px-6 py-4 text-sm text-gray-900"><%= cliente.email %></td>
+        <td class="px-6 py-4 text-sm text-gray-900 flex gap-4">
+          <%= link_to edit_admin_cliente_path(cliente), class: 'inline-flex items-center text-indigo-600 hover:text-indigo-900' do %>
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-5" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18.5 2.5L21.5 5.5L11 16H8V13L18.5 2.5z" />
+            </svg>
+            Editar
+          <% end %>
+
+          <%= link_to admin_cliente_path(cliente), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'inline-flex items-center text-red-600 hover:text-red-900' do %>
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 7L5 7M10 11v6m4-6v6M4 7h16M9 3h6a2 2 0 012 2v1H7V5a2 2 0 012-2z" />
+            </svg>
+            Excluir
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

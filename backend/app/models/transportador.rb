@@ -1,4 +1,5 @@
-class Transportador < ApplicationRecord
-  has_many :fretes
-  validates :nome, :cpf, :cnh, :cep, :tipo_veiculo, :capacidade_kg, :pix, presence: true
+
+has_many :avaliacoes
+def media_avaliacoes
+  avaliacoes.average(:nota).to_f.round(1)
 end

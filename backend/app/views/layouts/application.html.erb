@@ -1,0 +1,31 @@
+<<!DOCTYPE html>
+<html>
+  <head>
+    <title>CargoLink</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application.tailwind", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800 min-h-screen">
+    <header class="bg-white shadow p-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700">CargoLink</h1>
+
+      <% if user_signed_in? %>
+        <p class="text-sm text-gray-600 text-right">
+          Logado como: <%= current_user.email %> (<%= current_user.role.titleize %>)
+        </p>
+      <% end %>
+    </header>
+
+    <main class="p-6">
+      <%= yield %>
+    </main>
+
+    <footer class="bg-white shadow mt-10 p-4 text-center text-sm text-gray-500">
+      &copy; <%= Time.now.year %> CargoLink. Todos os direitos reservados.
+    </footer>
+  </body>
+</html>

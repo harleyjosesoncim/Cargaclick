@@ -1,0 +1,32 @@
+<div class="max-w-xl mx-auto p-6 bg-white rounded shadow-md">
+  <h1 class="text-2xl font-bold mb-4">Cadastrar Cliente</h1>
+  <%= form_with(model: @cliente, url: admin_clientes_path, local: true, class: "space-y-4") do |form| %>
+    <div>
+      <%= form.label :nome, class: "block font-medium" %>
+      <%= form.text_field :nome, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :cpf, class: "block font-medium" %>
+      <%= form.text_field :cpf, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :cep_destino, class: "block font-medium" %>
+      <%= form.text_field :cep_destino, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :tipo_carga, class: "block font-medium" %>
+      <%= form.text_field :tipo_carga, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :descricao, class: "block font-medium" %>
+      <%= form.text_area :descricao, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :descarregar_em, class: "block font-medium" %>
+      <%= form.text_field :descarregar_em, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.submit "Salvar", class: "bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded" %>
+    </div>
+  <% end %>
+</div>

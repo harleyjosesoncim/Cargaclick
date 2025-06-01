@@ -1,0 +1,45 @@
+<h1 class="text-2xl font-bold mb-6">Ranking de Fidelidade</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+  <div>
+    <h2 class="text-xl font-semibold mb-2">Top Transportadores</h2>
+    <table class="min-w-full bg-white shadow rounded-xl overflow-hidden">
+      <thead>
+        <tr class="bg-gray-100 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">
+          <th class="px-6 py-3">Nome</th>
+          <th class="px-6 py-3">Pontos</th>
+        </tr>
+      </thead>
+      <tbody class="text-sm divide-y divide-gray-200">
+        <% @top_transportadores.each do |t| %>
+          <tr>
+            <td class="px-6 py-4"><%= t.nome %></td>
+            <td class="px-6 py-4"><%= t.pontos %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-semibold mb-2">Top Clientes</h2>
+    <table class="min-w-full bg-white shadow rounded-xl overflow-hidden">
+      <thead>
+        <tr class="bg-gray-100 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">
+          <th class="px-6 py-3">Nome</th>
+          <th class="px-6 py-3">Pontos</th>
+        </tr>
+      </thead>
+      <tbody class="text-sm divide-y divide-gray-200">
+        <% @top_clientes.each do |c| %>
+          <tr>
+            <td class="px-6 py-4"><%= c.nome %></td>
+            <td class="px-6 py-4"><%= c.pontos %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>

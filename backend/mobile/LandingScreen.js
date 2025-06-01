@@ -1,0 +1,1 @@
+// Tela inicial do app mobile (React Native).

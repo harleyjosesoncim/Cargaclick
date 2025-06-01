@@ -1,15 +1,20 @@
 class ClientesController < ApplicationController
-  def create
-    cliente = Cliente.new(cliente_params)
-    if cliente.save
-      render json: cliente, status: :created
-    else
-      render json: cliente.errors, status: :unprocessable_entity
-    end
+  def cartao
   end
 
-  private
-  def cliente_params
-    params.require(:cliente).permit(:nome, :cpf, :rg, :cep)
+  def salvar_cartao
+    cliente = Cliente.find_by(email: params[:email])
+    if cliente
+      cliente.update(
+        token_cartao: params[:token],
+        metodo_pagamento: params[:paymentMethodId],
+        banco_emissor: params[:issuerId],
+        doc_numero: params[:docNumber],
+        doc_tipo: params[:docType]
+      )
+      render json: { status: 'Cartão salvo com sucesso' }, status: :ok
+    else
+      render json: { error: 'Cliente não encontrado' }, status: :not_found
+    end
   end
 end

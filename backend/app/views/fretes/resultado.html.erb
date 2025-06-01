@@ -1,0 +1,10 @@
+<h1>Resultado da Simulação</h1>
+
+<p><strong>Origem:</strong> <%= @resultado[:origem] %></p>
+<p><strong>Destino:</strong> <%= @resultado[:destino] %></p>
+<p><strong>Distância:</strong> <%= @resultado[:distancia] %> km</p>
+<p><strong>Tipo:</strong> <%= @resultado[:tipo] %></p>
+<p><strong>Preço por km:</strong> R$ <%= @resultado[:preco_km] %></p>
+<p><strong>Total estimado:</strong> <strong>R$ <%= @resultado[:total] %></strong></p>
+
+<%= link_to "Voltar", fretes_novo_path, class: "btn btn-secondary" %>
