@@ -1,21 +1,21 @@
 @echo off
-SETLOCAL
+cd /d C:\Users\User\Documents\cargaclik\backend
 
-echo === Extraindo ZIP para D:/cargaclik/backend ===
-powershell -Command "Expand-Archive -Path "%~dp0cargaclik_backend_rails.zip" -DestinationPath "D:/cargaclik/backend" -Force"
+echo === [1/4] Limpando arquivos Nix (se existirem) ===
+del nixpacks.toml 2>nul
+del nix.toml 2>nul
+del /s /q *.nix 2>nul
 
-cd /d "D:/cargaclik/backend"
+echo === [2/4] Confirmando Procfile correto ===
+echo web: bundle exec rails server -b 0.0.0.0 -p $PORT > Procfile
 
-echo === Iniciando repositório Git ===
-git init
-git branch -M main
+echo === [3/4] Commitando e enviando para o GitHub ===
 git add .
-git commit -m "Deploy inicial do backend CargaClik"
-git remote add origin https://github.com/harleyjosesoncim/Cargaclik.git
-git push -u origin main
+git commit -m "Reestrutura backend com pastas mínimas e força Docker"
+git push origin main
 
-echo === Abrindo Railway ===
-start https://railway.app/project
+echo === [4/4] Abrindo Railway para monitorar o deploy ===
+start https://railway.app/project/fa3a8fa6-9d3d-4714-863a-25461c385549?environmentId=6fde1f36-5e25-4e7d-99bd-3dbfc4f959f5
 
-echo === Concluído ===
+echo === PRONTO! Verifique o build no Railway ===
 pause
