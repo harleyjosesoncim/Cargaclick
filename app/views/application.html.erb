@@ -1,0 +1,3 @@
+<% if usuario_signed_in? %>
+  <p>Bem-vindo, <%= current_usuario.email %>! Você está logado como <strong><%= current_usuario.role.titleize %></strong>.</p>
+<% end %>

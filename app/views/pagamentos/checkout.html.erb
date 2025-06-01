@@ -1,0 +1,4 @@
+<h1 class="text-xl font-bold mb-4">Pagamento do Frete</h1>
+<p>Cliente: <%= @frete.cliente.nome %></p>
+<p>Valor do frete: R$ <%= number_with_precision(@frete.valor_frete, precision: 2) %></p>
+<%= button_to "Pagar com Mercado Pago", processar_pagamento_path(@frete), method: :post, class: "bg-blue-600 text-white px-4 py-2 rounded" %>

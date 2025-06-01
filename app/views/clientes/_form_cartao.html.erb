@@ -1,0 +1,99 @@
+<div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-xl rounded-xl">
+  <h2 class="text-2xl font-bold mb-6 text-gray-800">Cadastro de Cartão de Crédito</h2>
+
+  <form id="cardForm">
+    <div class="mb-4">
+      <label for="form-cardholderName" class="block text-sm font-medium text-gray-700">Nome no cartão</label>
+      <input type="text" id="form-cardholderName" data-checkout="cardholderName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+    </div>
+
+    <div class="mb-4">
+      <label for="form-email" class="block text-sm font-medium text-gray-700">Email</label>
+      <input type="email" id="form-email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+    </div>
+
+    <div class="mb-4">
+      <label for="form-cardNumber" class="block text-sm font-medium text-gray-700">Número do cartão</label>
+      <input type="text" id="form-cardNumber" data-checkout="cardNumber" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+    </div>
+
+    <div class="flex gap-4 mb-4">
+      <div class="w-1/2">
+        <label for="form-cardExpirationMonth" class="block text-sm font-medium text-gray-700">Mês de validade</label>
+        <input type="text" id="form-cardExpirationMonth" data-checkout="cardExpirationMonth" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+      </div>
+      <div class="w-1/2">
+        <label for="form-cardExpirationYear" class="block text-sm font-medium text-gray-700">Ano de validade</label>
+        <input type="text" id="form-cardExpirationYear" data-checkout="cardExpirationYear" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="form-securityCode" class="block text-sm font-medium text-gray-700">CVV</label>
+      <input type="text" id="form-securityCode" data-checkout="securityCode" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+    </div>
+
+    <div class="mb-4">
+      <label for="form-docType" class="block text-sm font-medium text-gray-700">Tipo de documento</label>
+      <select id="form-docType" data-checkout="docType" class="mt-1 block w-full border border-gray-300 rounded-md p-2"></select>
+    </div>
+
+    <div class="mb-6">
+      <label for="form-docNumber" class="block text-sm font-medium text-gray-700">Número do documento</label>
+      <input type="text" id="form-docNumber" data-checkout="docNumber" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+    </div>
+
+    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Salvar Cartão
+    </button>
+  </form>
+</div>
+
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script>
+  const mp = new MercadoPago('YOUR_PUBLIC_KEY');
+
+  const cardForm = mp.cardForm({
+    amount: "100.00",
+    autoMount: true,
+    form: {
+      id: "cardForm",
+      cardholderName: { id: "form-cardholderName" },
+      cardholderEmail: { id: "form-email" },
+      cardNumber: { id: "form-cardNumber" },
+      cardExpirationMonth: { id: "form-cardExpirationMonth" },
+      cardExpirationYear: { id: "form-cardExpirationYear" },
+      securityCode: { id: "form-securityCode" },
+      identificationType: { id: "form-docType" },
+      identificationNumber: { id: "form-docNumber" }
+    },
+    callbacks: {
+      onSubmit: event => {
+        event.preventDefault();
+        const {
+          paymentMethodId,
+          issuerId,
+          cardholderEmail,
+          token,
+          identificationNumber,
+          identificationType
+        } = cardForm.getCardFormData();
+
+        fetch("/clientes/salvar_cartao", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            token,
+            paymentMethodId,
+            issuerId,
+            email: cardholderEmail,
+            docNumber: identificationNumber,
+            docType: identificationType
+          })
+        })
+        .then(response => response.json())
+        .then(data => alert(data.status || data.error));
+      }
+    }
+  });
+</script>

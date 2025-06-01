@@ -1,0 +1,24 @@
+<h1 class="text-2xl font-bold mb-4">Novo Transportador</h1>
+<%= form_with(model: [:admin, @transportador], local: true) do |form| %>
+  <div class="mb-4">
+    <%= form.label :nome, class: "block text-gray-700" %>
+    <%= form.text_field :nome, class: "mt-1 block w-full border border-gray-300 rounded-md p-2" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :cpf, class: "block text-gray-700" %>
+    <%= form.text_field :cpf, class: "mt-1 block w-full border border-gray-300 rounded-md p-2" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :tipo_veiculo, class: "block text-gray-700" %>
+    <%= form.text_field :tipo_veiculo, class: "mt-1 block w-full border border-gray-300 rounded-md p-2" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :tipo_carga, class: "block text-gray-700" %>
+    <%= form.text_field :tipo_carga, class: "mt-1 block w-full border border-gray-300 rounded-md p-2" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :valor_km, "Valor por KM", class: "block text-gray-700" %>
+    <%= form.number_field :valor_km, step: 0.01, class: "mt-1 block w-full border border-gray-300 rounded-md p-2" %>
+  </div>
+  <%= form.submit "Salvar", class: "bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded" %>
+<% end %>

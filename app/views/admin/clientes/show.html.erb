@@ -1,0 +1,8 @@
+<h1><%= @cliente.nome %></h1>
+<p><strong>CPF:</strong> <%= @cliente.cpf %></p>
+<p><strong>CEP Destino:</strong> <%= @cliente.cep_destino %></p>
+<p><strong>Tipo de Carga:</strong> <%= @cliente.tipo_carga %></p>
+<p><strong>Descrição:</strong> <%= @cliente.descricao %></p>
+<p><strong>Descarregar em:</strong> <%= @cliente.descarregar_em %></p>
+<%= button_to 'Simular Trajeto', simular_trajeto_cliente_path(@cliente), method: :post, class: 'btn btn-primary' %>
+

@@ -1,0 +1,11 @@
+
+<h2>Buscar Transportadores</h2>
+<%= form_with url: transportadores_buscar_path, method: :post, local: true do |f| %>
+  <%= f.label :tipo_veiculo, "Tipo de Veículo" %>
+  <%= f.select :tipo_veiculo, ['Bike', 'Moto', 'Carro', 'Caminhão'], include_blank: true %>
+  <%= f.label :preco_max, "Preço Máximo por KM" %>
+  <%= f.number_field :preco_max, step: 0.01 %>
+  <%= f.label :avaliacao_minima, "Avaliação Mínima" %>
+  <%= f.number_field :avaliacao_minima, step: 0.1, min: 1, max: 5 %>
+  <%= f.submit "Filtrar", class: "btn btn-primary" %>
+<% end %>

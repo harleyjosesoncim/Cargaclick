@@ -1,0 +1,28 @@
+<h2 class="text-lg font-semibold mb-4">Cadastrar Transportador</h2>
+<%= form_with(model: @transportador, url: admin_transportadors_path, local: true, class: "space-y-4") do |form| %>
+  <div>
+    <%= form.label :nome %>
+    <%= form.text_field :nome, class: "input" %>
+  </div>
+  <div>
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf, class: "input" %>
+  </div>
+  <div>
+    <%= form.label :tipo_veiculo %>
+    <%= form.text_field :tipo_veiculo, class: "input" %>
+  </div>
+  <div>
+    <%= form.label :tipo_carga %>
+    <%= form.text_field :tipo_carga, class: "input" %>
+  </div>
+  <div>
+    <%= form.label :cep %>
+    <%= form.text_field :cep, class: "input" %>
+  </div>
+  <div>
+    <%= form.label :valor_km %>
+    <%= form.number_field :valor_km, step: 0.01, class: "input" %>
+  </div>
+  <%= form.submit "Salvar", class: "bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded" %>
+<% end %>

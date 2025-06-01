@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulador de Frete - CargoLink</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #map { height: 400px; width: 100%; margin-top: 1rem; }
+  </style>
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+    <h1 class="text-2xl font-bold mb-4">Simular Frete</h1>
+
+    <form id="simuladorForm" class="flex flex-col space-y-4">
+      <label>CEP Origem</label>
+      <input type="text" name="cep_origem" id="cep_origem" class="border p-2 rounded" required />
+
+      <label>CEP Destino</label>
+      <input type="text" name="cep_destino" id="cep_destino" class="border p-2 rounded" required />
+
+      <label>Peso da Carga (kg)</label>
+      <input type="number" name="peso" id="peso" class="border p-2 rounded" required />
+
+      <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Simular Frete</button>
+    </form>
+
+    <div id="map"></div>
+
+    <div class="mt-4 text-lg font-semibold" id="resultado"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("simuladorForm");
+    const resultado = document.getElementById("resultado");
+    const map = L.map('map').setView([-14.2350, -51.9253], 4); // Brasil
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const origem = document.getElementById("cep_origem").value;
+      const destino = document.getElementById("cep_destino").value;
+      const peso = document.getElementById("peso").value;
+
+      const resGeo1 = await fetch(`https://nominatim.openstreetmap.org/search?q=${origem}&format=json`);
+      const geo1 = await resGeo1.json();
+      const latlng1 = [parseFloat(geo1[0].lat), parseFloat(geo1[0].lon)];
+
+      const resGeo2 = await fetch(`https://nominatim.openstreetmap.org/search?q=${destino}&format=json`);
+      const geo2 = await resGeo2.json();
+      const latlng2 = [parseFloat(geo2[0].lat), parseFloat(geo2[0].lon)];
+
+      map.setView(latlng1, 10);
+      L.marker(latlng1).addTo(map).bindPopup("Origem").openPopup();
+      L.marker(latlng2).addTo(map).bindPopup("Destino").openPopup();
+      L.polyline([latlng1, latlng2], {color: 'blue'}).addTo(map);
+
+      const rota = await fetch(`https://api.openrouteservice.org/v2/directions/driving-car?start=${geo1[0].lon},${geo1[0].lat}&end=${geo2[0].lon},${geo2[0].lat}`, {
+        headers: {
+          'Authorization': '5b3ce3597851110001cf624830ee079da0ef6e1a4703ab7c5a7dec9ac4e24a86cbdda0da9683b4f9',
+          'Content-Type': 'application/json'
+        }
+      });
+      const dados = await rota.json();
+      const distancia = dados.features[0].properties.segments[0].distance / 1000;
+
+      const preco_km = 20;
+      const valor_frete = (preco_km * distancia).toFixed(2);
+
+      resultado.innerText = `Distância: ${distancia.toFixed(2)} km | Valor estimado: R$ ${valor_frete}`;
+    });
+  </script>
+</body>
+</html>

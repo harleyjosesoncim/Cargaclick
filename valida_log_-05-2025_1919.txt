@@ -1,0 +1,138 @@
+Iniciando validacao em 27/05/2025 19:19:03,97 
+========================= 
+3) Executando scripts principais do projeto 
+========================= 
+[1] Executando: check_deploy_prereqs.bat 
+'"check_deploy_prereqs.bat"' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[2] Executando: verificar_estrutura.bat 
+'"verificar_estrutura.bat"' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[3] Executando: deploy_cargaclik.bat 
+'"deploy_cargaclik.bat"' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[4] Executando: super_deploy_cargaclik.bat 
+'"super_deploy_cargaclik.bat"' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[5] Executando: run_cargaclik.bat 
+'"run_cargaclik.bat"' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[6] Executando: automate_all.bat 
+'"automate_all.bat"' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[7] Executando: limpar_cargolink.bat 
+'"limpar_cargolink.bat"' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[8] Executando: iniciar_cargolink.bat 
+'"iniciar_cargolink.bat"' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[9] Executando: processar_video.py 
+Tipo de arquivo desconhecido: processar_video.py (ignorando
+[10] Executando: setup_guard_ci.bat 
+'"setup_guard_ci.bat"' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+========================= 
+1) Checando dependencias  
+========================= 
+OK: node encontrado. 
+OK: npm encontrado. 
+OK: python encontrado. 
+OK: git encontrado. 
+OK: docker encontrado. 
+OK: netlify encontrado. 
+ 
+========================= 
+2) Checando variaveis de ambiente 
+========================= 
+AUTO-FIX: Variavel NODE_ENV nao estava definida, setada para "development". 
+AUTO-FIX: Variavel RAILS_ENV nao estava definida, setada para "development". 
+ 
+========================= 
+3) Executando scripts principais do projeto 
+========================= 
+[1] Executando: check_deploy_prereqs.bat 
+'check_deploy_prereqs.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: verificar_estrutura.bat 
+'verificar_estrutura.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: deploy_cargaclik.bat 
+'deploy_cargaclik.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: super_deploy_cargaclik.bat 
+'super_deploy_cargaclik.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: run_cargaclik.bat 
+'run_cargaclik.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: automate_all.bat 
+'automate_all.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: limpar_cargolink.bat 
+'limpar_cargolink.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: iniciar_cargolink.bat 
+'iniciar_cargolink.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+[1] Executando: processar_video.py 
+Could not find platform independent libraries <prefix>
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\cargaclik\processar_video.py", line 1, in <module>
+    from moviepy.editor import VideoFileClip, AudioFileClip
+ModuleNotFoundError: No module named 'moviepy'
+[1] Executando: setup_guard_ci.bat 
+'setup_guard_ci.bat' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+------------------------------- 
+ 
+========================= 
+RELATORIO FINAL - CARGACLIK 
+========================= 
+ 
+-- DEPENDENCIAS -- 
+node: 
+OK 
+npm: 
+OK 
+python: 
+OK 
+git: 
+OK 
+docker: 
+OK 
+netlify: 
+OK 
+ 
+-- VARIAVEIS DE AMBIENTE -- 
+NODE_ENV: 
+AUTO-FIX 
+RAILS_ENV: 
+AUTO-FIX 
+ 
+-- SCRIPTS EXECUTADOS -- 
+check_deploy_prereqs.bat: 
+IGNORADO 
+verificar_estrutura.bat: 
+IGNORADO 
+deploy_cargaclik.bat: 
+IGNORADO 
+super_deploy_cargaclik.bat: 
+IGNORADO 
+run_cargaclik.bat: 
+IGNORADO 
+automate_all.bat: 
+IGNORADO 
+limpar_cargolink.bat: 
+IGNORADO 
+iniciar_cargolink.bat: 
+IGNORADO 
+processar_video.py: 
+IGNORADO 
+setup_guard_ci.bat: 
+IGNORADO 
+%S: 
+IGNORADO 
+ 
+===================================== 
+ TUDO CERTO 
+===================================== 

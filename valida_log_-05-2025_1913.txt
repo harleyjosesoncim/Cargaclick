@@ -1,0 +1,320 @@
+Iniciando validacao em 27/05/2025 19:13:55,00 
+========================= 
+3) Executando scripts principais do projeto 
+========================= 
+[1] Executando: check_deploy_prereqs.bat 
+============================================
+Verificando prÃ©-requisitos de deploy
+============================================
+Netlify CLI encontrado.
+[2] Executando: verificar_estrutura.bat 
+Verificando estrutura do projeto CargoLink...
+[OK] Gemfile encontrado
+[OK] config/routes.rb encontrado
+[OK] app/controllers/application_controller.rb encontrado
+[OK] Pasta de views encontrada
+[OK] Pasta de migrations encontrada
+
+=== VerificaÃ§Ã£o concluÃ­da ===
+Pressione qualquer tecla para continuar. . . 
+[3] Executando: deploy_cargaclik.bat 
+
+=== 1. Commitando e enviando para GitHub ===
+warning: in the working copy of 'valida_log_-05-2025_1908.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs_assets/valida_log_-05-2025_1908.txt', LF will be replaced by CRLF the next time Git touches it
+[main eca11e4] Â­Æ’ÃœÃ‡ Deploy automâ”œÃ­tico CargaClik
+ 4 files changed, 186 insertions(+)
+ create mode 100644 docs_assets/valida_log_-05-2025_1908.txt
+ create mode 100644 valida_log_-05-2025_1913.txt
+remote: This repository moved. Please use the new location:        
+remote:   git@github.com:harleyjosesoncim/Cargaclick.git        
+branch 'main' set up to track 'origin/main'.
+To github.com:HarleyJoseSoncim/Cargaclick.git
+   d942f7b..eca11e4  main -> main
+
+=== 2. Deploy backend no Heroku ===
+[ERRO] Heroku CLI nÃ£o instalada. Instale e tente de novo
+Pressione qualquer tecla para continuar. . . 
+[4] Executando: super_deploy_cargaclik.bat 
+[ERRO] 
+Pressione qualquer tecla para continuar. . . 
+[5] Executando: run_cargaclik.bat 
+[2/8] Verificando Bundler...
+Bundler ja instalado.
+[6] Executando: automate_all.bat 
+==============================================
+ AutomaÃ§Ã£o: Heroku vars, checagem e deploy
+==============================================
+Configurando variaveis Heroku a partir de .env.production...
+Definindo MP_ACCESS_TOKEN=sua-chave-do-mercado-pago...
+'heroku' nÆo ‚ reconhecido como um comando interno
+ou externo, um programa oper vel ou um arquivo em lotes.
+Definindo EFIBANK_CLIENT_ID=seu-client-id...
+'heroku' nÆo ‚ reconhecido como um comando interno
+ou externo, um programa oper vel ou um arquivo em lotes.
+Definindo EFIBANK_CLIENT_SECRET=sua-client-secret...
+'heroku' nÆo ‚ reconhecido como um comando interno
+ou externo, um programa oper vel ou um arquivo em lotes.
+Definindo EFIBANK_SANDBOX=true...
+'heroku' nÆo ‚ reconhecido como um comando interno
+ou externo, um programa oper vel ou um arquivo em lotes.
+Definindo DATABASE_URL=postgres://postgres:password@db:5432/postgres...
+'heroku' nÆo ‚ reconhecido como um comando interno
+ou externo, um programa oper vel ou um arquivo em lotes.
+Definindo RAILS_ENV=production...
+'heroku' nÆo ‚ reconhecido como um comando interno
+ou externo, um programa oper vel ou um arquivo em lotes.
+Definindo ORS_API_KEY=5b3ce3597851110001cf624830ee079da0ef6e1a4703ab7c5a7dec9ac4e24a86cbdda0da9683b4f9...
+'heroku' nÆo ‚ reconhecido como um comando interno
+ou externo, um programa oper vel ou um arquivo em lotes.
+Variaveis configuradas no Heroku.
+
+Exibindo variaveis do topo de deploy_prod.bat:
+set GITHUB_REPO=git@github.com:HarleyJoseSoncim/Cargaclick.git
+set HEROKU_APP=cargaclick-backend
+set NETLIFY_SITE_ID=SEU_SITE_ID_NETLIFY
+set DOMAIN=cargaclick.com.br
+
+Executando deploy_prod.bat...
+
+=== 1. Preparando repositÃ³rio ===
+Limpando node_modules, builds e logsâ€¦
+
+Comitando alteraÃ§Ãµesâ€¦
+warning: in the working copy of 'valida_log_-05-2025_1913.txt', LF will be replaced by CRLF the next time Git touches it
+[main 2c864e8] Â­Æ’ÃœÃ‡ Ready for production deploy
+ 1 file changed, 24 insertions(+)
+Push para GitHubâ€¦
+remote: This repository moved. Please use the new location:        
+remote:   git@github.com:harleyjosesoncim/Cargaclick.git        
+branch 'main' set up to track 'origin/main'.
+To github.com:HarleyJoseSoncim/Cargaclick.git
+   eca11e4..2c864e8  main -> main
+
+Deploy backend para Herokuâ€¦
+'heroku' nÆo ‚ reconhecido como um comando interno
+ou externo, um programa oper vel ou um arquivo em lotes.
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+'heroku' nÆo ‚ reconhecido como um comando interno
+ou externo, um programa oper vel ou um arquivo em lotes.
+
+Deploy landing (docs_assets) para Netlifyâ€¦
+ Â»   Error: Project not found. Please rerun "netlify link"
+
+=== AutomaÃ§Ã£o concluida ===
+Pressione qualquer tecla para continuar. . . 
+[7] Executando: limpar_cargolink.bat 
+=========================================
+ðŸš› Limpando arquivos desnecessÃ¡rios do CargoLink...
+=========================================
+=========================================
+âœ… Limpeza concluÃ­da com sucesso
+Agora vocÃª pode zipar os mÃ³dulos com seguranÃ§a.
+Pressione qualquer tecla para continuar. . . 
+[8] Executando: iniciar_cargolink.bat 
+Iniciando CargoLink...
+Bundle complete! 17 Gemfile dependencies, 102 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+                 [--skip-namespace]                                            # Skip namespace (affects only isolated engines)
+                                                                               # Default: false
+                 [--skip-collision-check]                                      # Skip collision check
+                                                                               # Default: false
+  -r,            [--ruby=PATH]                                                 # Path to the Ruby binary of your choice
+                                                                               # Default: C:/Ruby34-x64/bin/ruby.exe
+  -n,            [--name=NAME]                                                 # Name of the app
+  -m,            [--template=TEMPLATE]                                         # Path to some application template (can be a filesystem path or URL)
+  -d,            [--database=DATABASE]                                         # Preconfigure for selected database
+                                                                               # Default: sqlite3
+                                                                               # Possible values: mysql, trilogy, postgresql, sqlite3, mariadb-mysql, mariadb-trilogy
+  -G,            [--skip-git]                                                  # Skip git init, .gitignore and .gitattributes
+                 [--skip-docker]                                               # Skip Dockerfile, .dockerignore and bin/docker-entrypoint
+                 [--skip-keeps]                                                # Skip source control .keep files
+  -M,            [--skip-action-mailer]                                        # Skip Action Mailer files
+                 [--skip-action-mailbox]                                       # Skip Action Mailbox gem
+                 [--skip-action-text]                                          # Skip Action Text gem
+  -O,            [--skip-active-record]                                        # Skip Active Record files
+                 [--skip-active-job]                                           # Skip Active Job
+                 [--skip-active-storage]                                       # Skip Active Storage files
+  -C,            [--skip-action-cable]                                         # Skip Action Cable files
+  -A,            [--skip-asset-pipeline]                                       # Indicates when to generate skip asset pipeline
+  -J, --skip-js, [--skip-javascript]                                           # Skip JavaScript files
+                 [--skip-hotwire]                                              # Skip Hotwire integration
+                 [--skip-jbuilder]                                             # Skip jbuilder gem
+  -T,            [--skip-test]                                                 # Skip test files
+                 [--skip-system-test]                                          # Skip system test files
+                 [--skip-bootsnap]                                             # Skip bootsnap gem
+                 [--skip-dev-gems]                                             # Skip development gems (e.g., web-console)
+                 [--skip-thruster]                                             # Skip Thruster setup
+                 [--skip-rubocop]                                              # Skip RuboCop setup
+                 [--skip-brakeman]                                             # Skip brakeman setup
+                 [--skip-ci]                                                   # Skip GitHub CI files
+                 [--skip-kamal]                                                # Skip Kamal setup
+                 [--skip-solid]                                                # Skip Solid Cache, Queue, and Cable setup
+                 [--dev], [--no-dev], [--skip-dev]                             # Set up the application with Gemfile pointing to your Rails checkout
+                 [--devcontainer], [--no-devcontainer], [--skip-devcontainer]  # Generate devcontainer files
+                 [--edge], [--no-edge], [--skip-edge]                          # Set up the application with a Gemfile pointing to the 8-0-stable branch on the Rails repository
+  --master,      [--main], [--no-main], [--skip-main]                          # Set up the application with Gemfile pointing to Rails repository main branch
+                 [--rc=RC]                                                     # Path to file containing extra configuration options for rails command
+                 [--no-rc]                                                     # Skip loading of extra configuration options from .railsrc file
+                 [--api], [--no-api], [--skip-api]                             # Preconfigure smaller stack for API only apps
+                                                                               # Default: false
+                 [--minimal], [--no-minimal], [--skip-minimal]                 # Preconfigure a minimal rails app
+  -j, --js,      [--javascript=JAVASCRIPT]                                     # Choose JavaScript approach
+                                                                               # Default: importmap
+                                                                               # Possible values: importmap, bun, webpack, esbuild, rollup
+  -c,            [--css=CSS]                                                   # Choose CSS processor. Check https://github.com/rails/cssbundling-rails for more options
+                                                                               # Possible values: tailwind, bootstrap, bulma, postcss, sass
+  -B,            [--skip-bundle]                                               # Don't run bundle install
+                 [--skip-decrypted-diffs]                                      # Don't configure git to show decrypted diffs of encrypted credentials
+
+Runtime options:
+  -f, [--force]                                      # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend], [--skip-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet], [--skip-quiet]        # Suppress status output
+  -s, [--skip], [--no-skip], [--skip-skip]           # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help], [--skip-help]           # Show this help message and quit
+  -v, [--version], [--no-version], [--skip-version]  # Show Rails version number and quit
+
+Description:
+    The `rails new` command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    `rails new` runs in the .railsrc configuration file in your home directory,
+    or in $XDG_CONFIG_HOME/rails/railsrc if XDG_CONFIG_HOME is set.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    default values shown above in this help message.
+
+    You can specify which version to use when creating a new rails application 
+    using `rails _<version>_ new`.
+
+Examples:
+    `rails new ~/Code/Ruby/weblog`
+
+    This generates a new Rails app in ~/Code/Ruby/weblog.
+
+    `rails _<version>_ new weblog`
+
+    This generates a new Rails app with the provided version in ./weblog.
+
+    `rails new weblog --api`
+
+    This generates a new Rails app in API mode in ./weblog.
+
+    `rails new weblog --skip-action-mailer`
+
+    This generates a new Rails app without Action Mailer in ./weblog.
+    Any part of Rails can be skipped during app generation.
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+                 [--skip-namespace]                                            # Skip namespace (affects only isolated engines)
+                                                                               # Default: false
+                 [--skip-collision-check]                                      # Skip collision check
+                                                                               # Default: false
+  -r,            [--ruby=PATH]                                                 # Path to the Ruby binary of your choice
+                                                                               # Default: C:/Ruby34-x64/bin/ruby.exe
+  -n,            [--name=NAME]                                                 # Name of the app
+  -m,            [--template=TEMPLATE]                                         # Path to some application template (can be a filesystem path or URL)
+  -d,            [--database=DATABASE]                                         # Preconfigure for selected database
+                                                                               # Default: sqlite3
+                                                                               # Possible values: mysql, trilogy, postgresql, sqlite3, mariadb-mysql, mariadb-trilogy
+  -G,            [--skip-git]                                                  # Skip git init, .gitignore and .gitattributes
+                 [--skip-docker]                                               # Skip Dockerfile, .dockerignore and bin/docker-entrypoint
+                 [--skip-keeps]                                                # Skip source control .keep files
+  -M,            [--skip-action-mailer]                                        # Skip Action Mailer files
+                 [--skip-action-mailbox]                                       # Skip Action Mailbox gem
+                 [--skip-action-text]                                          # Skip Action Text gem
+  -O,            [--skip-active-record]                                        # Skip Active Record files
+                 [--skip-active-job]                                           # Skip Active Job
+                 [--skip-active-storage]                                       # Skip Active Storage files
+  -C,            [--skip-action-cable]                                         # Skip Action Cable files
+  -A,            [--skip-asset-pipeline]                                       # Indicates when to generate skip asset pipeline
+  -J, --skip-js, [--skip-javascript]                                           # Skip JavaScript files
+                 [--skip-hotwire]                                              # Skip Hotwire integration
+                 [--skip-jbuilder]                                             # Skip jbuilder gem
+  -T,            [--skip-test]                                                 # Skip test files
+                 [--skip-system-test]                                          # Skip system test files
+                 [--skip-bootsnap]                                             # Skip bootsnap gem
+                 [--skip-dev-gems]                                             # Skip development gems (e.g., web-console)
+                 [--skip-thruster]                                             # Skip Thruster setup
+                 [--skip-rubocop]                                              # Skip RuboCop setup
+                 [--skip-brakeman]                                             # Skip brakeman setup
+                 [--skip-ci]                                                   # Skip GitHub CI files
+                 [--skip-kamal]                                                # Skip Kamal setup
+                 [--skip-solid]                                                # Skip Solid Cache, Queue, and Cable setup
+                 [--dev], [--no-dev], [--skip-dev]                             # Set up the application with Gemfile pointing to your Rails checkout
+                 [--devcontainer], [--no-devcontainer], [--skip-devcontainer]  # Generate devcontainer files
+                 [--edge], [--no-edge], [--skip-edge]                          # Set up the application with a Gemfile pointing to the 8-0-stable branch on the Rails repository
+  --master,      [--main], [--no-main], [--skip-main]                          # Set up the application with Gemfile pointing to Rails repository main branch
+                 [--rc=RC]                                                     # Path to file containing extra configuration options for rails command
+                 [--no-rc]                                                     # Skip loading of extra configuration options from .railsrc file
+                 [--api], [--no-api], [--skip-api]                             # Preconfigure smaller stack for API only apps
+                                                                               # Default: false
+                 [--minimal], [--no-minimal], [--skip-minimal]                 # Preconfigure a minimal rails app
+  -j, --js,      [--javascript=JAVASCRIPT]                                     # Choose JavaScript approach
+                                                                               # Default: importmap
+                                                                               # Possible values: importmap, bun, webpack, esbuild, rollup
+  -c,            [--css=CSS]                                                   # Choose CSS processor. Check https://github.com/rails/cssbundling-rails for more options
+                                                                               # Possible values: tailwind, bootstrap, bulma, postcss, sass
+  -B,            [--skip-bundle]                                               # Don't run bundle install
+                 [--skip-decrypted-diffs]                                      # Don't configure git to show decrypted diffs of encrypted credentials
+
+Runtime options:
+  -f, [--force]                                      # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend], [--skip-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet], [--skip-quiet]        # Suppress status output
+  -s, [--skip], [--no-skip], [--skip-skip]           # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help], [--skip-help]           # Show this help message and quit
+  -v, [--version], [--no-version], [--skip-version]  # Show Rails version number and quit
+
+Description:
+    The `rails new` command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    `rails new` runs in the .railsrc configuration file in your home directory,
+    or in $XDG_CONFIG_HOME/rails/railsrc if XDG_CONFIG_HOME is set.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    default values shown above in this help message.
+
+    You can specify which version to use when creating a new rails application 
+    using `rails _<version>_ new`.
+
+Examples:
+    `rails new ~/Code/Ruby/weblog`
+
+    This generates a new Rails app in ~/Code/Ruby/weblog.
+
+    `rails _<version>_ new weblog`
+
+    This generates a new Rails app with the provided version in ./weblog.
+
+    `rails new weblog --api`
+
+    This generates a new Rails app in API mode in ./weblog.
+
+    `rails new weblog --skip-action-mailer`
+
+    This generates a new Rails app without Action Mailer in ./weblog.
+    Any part of Rails can be skipped during app generation.
+Pressione qualquer tecla para continuar. . . 
+[9] Executando: processar_video.py 
+Tipo de arquivo desconhecido: processar_video.py (ignorando
+[10] Executando: setup_guard_ci.bat 
+^CDeseja finalizar o arquivo em lotes (S/N)? Deseja finalizar o arquivo em lotes (S/N)? Deseja finalizar o arquivo em lotes (S/N)? Deseja finalizar o arquivo em lotes (S/N)? Deseja finalizar o arquivo em lotes (S/N)? Deseja finalizar o arquivo em lotes (S/N)? Deseja finalizar o arquivo em lotes (S/N)? Deseja finalizar o arquivo em lotes (S/N)? 

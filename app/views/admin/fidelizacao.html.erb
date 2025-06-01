@@ -1,0 +1,23 @@
+<h1 class="text-xl font-bold mb-6">Transportadores e Fidelização</h1>
+<table class="min-w-full bg-white shadow rounded-xl overflow-hidden">
+  <thead>
+    <tr class="bg-gray-100 text-sm text-left font-semibold">
+      <th class="px-4 py-2">Nome</th>
+      <th class="px-4 py-2">Plano</th>
+      <th class="px-4 py-2">Assinatura</th>
+      <th class="px-4 py-2">Pontos</th>
+      <th class="px-4 py-2">Nível</th>
+    </tr>
+  </thead>
+  <tbody class="text-sm divide-y divide-gray-200">
+    <% @transportadors.each do |t| %>
+      <tr>
+        <td class="px-4 py-2"><%= t.nome %></td>
+        <td class="px-4 py-2"><%= t.plano.capitalize %></td>
+        <td class="px-4 py-2"><%= t.assinatura_ativa ? 'Ativa' : 'Inativa' %></td>
+        <td class="px-4 py-2"><%= t.pontos %></td>
+        <td class="px-4 py-2"><%= t.nivel_fidelidade %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

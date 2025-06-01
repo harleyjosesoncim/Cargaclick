@@ -1,0 +1,61 @@
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+
+<h2>Pagamento com Cartão de Crédito</h2>
+
+<form id="payment-form" action="/pagamentos" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="metodo" value="credito">
+  <input type="hidden" name="valor" value="50.00">
+  <input type="hidden" name="card_token" id="cardToken">
+
+  <div>
+    <label>Nome no Cartão</label>
+    <input type="text" data-checkout="cardholderName" required />
+  </div>
+
+  <div>
+    <label>Número do Cartão</label>
+    <input type="text" data-checkout="cardNumber" required />
+  </div>
+
+  <div>
+    <label>Data de Validade</label>
+    <input type="text" placeholder="MM" data-checkout="cardExpirationMonth" maxlength="2" size="2" required /> /
+    <input type="text" placeholder="YYYY" data-checkout="cardExpirationYear" maxlength="4" size="4" required />
+  </div>
+
+  <div>
+    <label>CVV</label>
+    <input type="text" data-checkout="securityCode" required />
+  </div>
+
+  <div>
+    <label>CPF</label>
+    <input type="text" data-checkout="identificationNumber" required />
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input type="email" data-checkout="email" required />
+  </div>
+
+  <button type="submit">Pagar com Cartão</button>
+</form>
+
+<script>
+  const mp = new MercadoPago("SEU_PUBLIC_KEY");
+
+  const form = document.querySelector("#payment-form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    mp.createCardToken(form).then(function (result) {
+      if (result.status === 200 || result.status === 201) {
+        document.querySelector("#cardToken").value = result.body.id;
+        form.submit();
+      } else {
+        alert("Erro ao gerar token: " + result.message);
+      }
+    });
+  });
+</script>

@@ -1,0 +1,36 @@
+<h1 class="text-2xl font-bold mb-6">Lista de Fretes</h1>
+
+<table class="min-w-full bg-white shadow rounded-xl overflow-hidden">
+  <thead>
+    <tr class="bg-gray-100 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">
+      <th class="px-6 py-3">ID</th>
+      <th class="px-6 py-3">Cliente</th>
+      <th class="px-6 py-3">Valor</th>
+      <th class="px-6 py-3">Status</th>
+      <th class="px-6 py-3">Ações</th>
+    </tr>
+  </thead>
+  <tbody class="text-sm divide-y divide-gray-200">
+    <% @fretes.each do |frete| %>
+      <tr>
+        <td class="px-6 py-4"><%= frete.id %></td>
+        <td class="px-6 py-4"><%= frete.cliente.nome %></td>
+        <td class="px-6 py-4">R$ <%= number_with_precision(frete.valor_frete, precision: 2) %></td>
+        <td class="px-6 py-4">
+          <% if frete.status_pagamento == 'pago' %>
+            <span class="text-green-600 font-semibold">Pago</span>
+          <% else %>
+            <span class="text-yellow-600 font-semibold">Pendente</span>
+          <% end %>
+        </td>
+        <td class="px-6 py-4">
+          <% if frete.status_pagamento != 'pago' %>
+            <%= link_to 'Pagar', checkout_pagamento_path(frete), class: 'bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded' %>
+          <% else %>
+            <span class="text-gray-500 italic">Já pago</span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+<h1 class="text-2xl font-bold mb-6">Lista de Clientes</h1>
+
+<table class="min-w-full bg-white shadow rounded-xl overflow-hidden">
+  <thead>
+    <tr class="bg-gray-100 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">
+      <th class="px-6 py-3">Nome</th>
+      <th class="px-6 py-3">Email</th>
+      <th class="px-6 py-3">Status do Cartão</th>
+      <th class="px-6 py-3">Ações</th>
+    </tr>
+  </thead>
+  <tbody class="text-sm divide-y divide-gray-200">
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <td class="px-6 py-4"><%= cliente.nome %></td>
+        <td class="px-6 py-4"><%= cliente.email %></td>
+        <td class="px-6 py-4">
+          <% if cliente.token_cartao.present? %>
+            ✅ <span class="text-green-600 font-medium">Cadastrado</span>
+          <% else %>
+            ❌ <span class="text-red-600 font-medium">Não cadastrado</span>
+          <% end %>
+        </td>
+        <td class="px-6 py-4">
+          <%= link_to 'Ver', cliente_path(cliente), class: "text-blue-600 hover:underline" %> |
+          <%= link_to 'Editar', edit_cliente_path(cliente), class: "text-yellow-600 hover:underline" %> |
+          <%= link_to 'Excluir', cliente_path(cliente), method: :delete, data: { confirm: "Tem certeza?" }, class: "text-red-600 hover:underline" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

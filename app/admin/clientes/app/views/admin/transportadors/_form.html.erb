@@ -1,0 +1,76 @@
+<%= form_with(model: [:admin, @transportador], local: true, class: "space-y-4") do |form| %>
+  <div>
+    <%= form.label :nome, class: "block font-semibold" %>
+    <%= form.text_field :nome, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :cpf, class: "block font-semibold" %>
+    <%= form.text_field :cpf, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :endereco, class: "block font-semibold" %>
+    <%= form.text_field :endereco, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :cep, class: "block font-semibold" %>
+    <%= form.text_field :cep, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :numero_habilitacao, class: "block font-semibold" %>
+    <%= form.text_field :numero_habilitacao, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :tipo_veiculo, class: "block font-semibold" %>
+    <%= form.text_field :tipo_veiculo, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :capacidade_kg, class: "block font-semibold" %>
+    <%= form.number_field :capacidade_kg, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :tipo_cobranca, class: "block font-semibold" %>
+    <%= form.select :tipo_cobranca, ['por_km', 'valor_fixo'], {}, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :valor_cobranca, class: "block font-semibold" %>
+    <%= form.number_field :valor_cobranca, step: 0.01, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+  </div>
+
+  <div class="mb-4">
+  <%= form.label :cpf, "CPF" %>
+  <%= form.text_field :cpf, class: "form-input w-full" %>
+</div>
+
+<div class="mb-4">
+  <%= form.label :rg, "RG" %>
+  <%= form.text_field :rg, class: "form-input w-full" %>
+</div>
+
+<div class="mb-4">
+  <%= form.label :endereco, "Endereço" %>
+  <%= form.text_field :endereco, class: "form-input w-full" %>
+</div>
+
+<div class="mb-4">
+  <%= form.label :cep, "CEP" %>
+  <%= form.text_field :cep, class: "form-input w-full" %>
+</div>
+
+<div class="mb-4">
+  <%= form.label :data_nascimento, "Data de Nascimento" %>
+  <%= form.date_field :data_nascimento, class: "form-input w-full" %>
+</div>
+
+<% end %>

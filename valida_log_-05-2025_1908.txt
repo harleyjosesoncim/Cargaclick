@@ -1,0 +1,128 @@
+Iniciando validacao em 27/05/2025 19:08:33,25 
+========================= 
+1) Checando dependencias  
+========================= 
+OK: node encontrado. 
+OK: npm encontrado. 
+OK: python encontrado. 
+OK: git encontrado. 
+OK: docker encontrado. 
+OK: netlify encontrado. 
+ 
+========================= 
+2) Checando variaveis de ambiente 
+========================= 
+AUTO-FIX: Variavel NODE_ENV nao estava definida, setada para "development". 
+AUTO-FIX: Variavel RAILS_ENV nao estava definida, setada para "development". 
+ 
+========================= 
+3) Executando scripts principais do projeto 
+========================= 
+[1] Executando: check_deploy_prereqs.bat 
+============================================
+Verificando pr√©-requisitos de deploy
+============================================
+Netlify CLI encontrado.
+[1] Executando: verificar_estrutura.bat 
+Verificando estrutura do projeto CargoLink...
+[OK] Gemfile encontrado
+[OK] config/routes.rb encontrado
+[OK] app/controllers/application_controller.rb encontrado
+[OK] Pasta de views encontrada
+[OK] Pasta de migrations encontrada
+
+=== Verifica√ß√£o conclu√≠da ===
+Pressione qualquer tecla para continuar. . . 
+[1] Executando: deploy_cargaclik.bat 
+
+=== 1. Commitando e enviando para GitHub ===
+warning: in the working copy of 'docs_assets/.netlify/netlify.toml', LF will be replaced by CRLF the next time Git touches it
+[main f5924ab] ¬≠∆í√ú√á Deploy autom‚îú√≠tico CargaClik
+ 7 files changed, 397 insertions(+), 48 deletions(-)
+ create mode 100644 docs_assets/.netlify/netlify.toml
+ create mode 100644 docs_assets/index.html
+ create mode 100644 valida_log_-05-2025_1902.txt
+ create mode 100644 valida_log_-05-2025_1908.txt
+ create mode 100644 valida_monstro.bat
+ create mode 100644 valida_tudo.bat
+remote: This repository moved. Please use the new location:        
+remote:   git@github.com:harleyjosesoncim/Cargaclick.git        
+branch 'main' set up to track 'origin/main'.
+To github.com:HarleyJoseSoncim/Cargaclick.git
+   dfb05ab..f5924ab  main -> main
+
+=== 2. Deploy backend no Heroku ===
+[ERRO] Heroku CLI n√£o instalada. Instale e tente de novo
+Pressione qualquer tecla para continuar. . . 
+[1] Executando: super_deploy_cargaclik.bat 
+[ERRO] 
+Pressione qualquer tecla para continuar. . . 
+[1] Executando: run_cargaclik.bat 
+[2/8] Verificando Bundler...
+Bundler ja instalado.
+[1] Executando: automate_all.bat 
+==============================================
+ Automa√ß√£o: Heroku vars, checagem e deploy
+==============================================
+Configurando variaveis Heroku a partir de .env.production...
+Definindo MP_ACCESS_TOKEN=sua-chave-do-mercado-pago...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo EFIBANK_CLIENT_ID=seu-client-id...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo EFIBANK_CLIENT_SECRET=sua-client-secret...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo EFIBANK_SANDBOX=true...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo DATABASE_URL=postgres://postgres:password@db:5432/postgres...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo RAILS_ENV=production...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Definindo ORS_API_KEY=5b3ce3597851110001cf624830ee079da0ef6e1a4703ab7c5a7dec9ac4e24a86cbdda0da9683b4f9...
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+Variaveis configuradas no Heroku.
+
+Exibindo variaveis do topo de deploy_prod.bat:
+set GITHUB_REPO=git@github.com:HarleyJoseSoncim/Cargaclick.git
+set HEROKU_APP=cargaclick-backend
+set NETLIFY_SITE_ID=SEU_SITE_ID_NETLIFY
+set DOMAIN=cargaclick.com.br
+
+Executando deploy_prod.bat...
+
+=== 1. Preparando reposit√≥rio ===
+Limpando node_modules, builds e logs‚Ä¶
+
+Comitando altera√ß√µes‚Ä¶
+warning: in the working copy of 'valida_log_-05-2025_1908.txt', LF will be replaced by CRLF the next time Git touches it
+[main d942f7b] ¬≠∆í√ú√á Ready for production deploy
+ 1 file changed, 27 insertions(+)
+Push para GitHub‚Ä¶
+remote: This repository moved. Please use the new location:        
+remote:   git@github.com:harleyjosesoncim/Cargaclick.git        
+branch 'main' set up to track 'origin/main'.
+To github.com:HarleyJoseSoncim/Cargaclick.git
+   f5924ab..d942f7b  main -> main
+
+Deploy backend para Heroku‚Ä¶
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+'heroku' n∆o Ç reconhecido como um comando interno
+ou externo, um programa oper†vel ou um arquivo em lotes.
+
+Deploy landing (docs_assets) para Netlify‚Ä¶
+ ¬ª   Error: Project not found. Please rerun "netlify link"
+
+=== Automa√ß√£o concluida ===
+Pressione qualquer tecla para continuar. . . 

@@ -1,0 +1,35 @@
+<%= form_with(model: [:admin, @cliente], local: true, class: "space-y-4") do |form| %>
+  <div>
+    <%= form.label :nome, class: "block font-semibold" %>
+    <%= form.text_field :nome, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :cpf, class: "block font-semibold" %>
+    <%= form.text_field :cpf, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :cep_destino, class: "block font-semibold" %>
+    <%= form.text_field :cep_destino, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :tipo_carga, class: "block font-semibold" %>
+    <%= form.text_field :tipo_carga, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :descricao, class: "block font-semibold" %>
+    <%= form.text_area :descricao, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :descarregar_em, class: "block font-semibold" %>
+    <%= form.text_field :descarregar_em, class: "w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+  </div>
+<% end %>
