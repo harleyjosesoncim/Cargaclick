@@ -1,1 +1,3 @@
-web: bundle exec rails server -b 0.0.0.0 -p $PORT
+git add Procfile
+git commit -m "Corrige Procfile para deploy Railway"
+git push origin main
