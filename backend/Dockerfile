@@ -1,13 +1,25 @@
 FROM ruby:3.2
 
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+# Instala dependências do sistema
+RUN apt-get update -qq && apt-get install -y \
+  build-essential \
+  libpq-dev \
+  nodejs \
+  yarn \
+  sqlite3 \
+  libsqlite3-dev
 
+# Define diretório padrão da aplicação
 WORKDIR /app
 
-COPY . /app
+# Copia os arquivos do projeto
+COPY . .
 
-RUN gem install bundler && bundle install
+# Instala gems
+RUN bundle install
 
+# Expõe a porta usada pela aplicação
 EXPOSE 3000
 
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+# Comando para iniciar o servidor Rails
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]

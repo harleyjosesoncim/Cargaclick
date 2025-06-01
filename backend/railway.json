@@ -1,9 +1,5 @@
 {
   "build": {
-    "dockerfilePath": "Dockerfile",
-    "context": "."
-  },
-  "deploy": {
-    "startCommand": null
+    "dockerfilePath": "Dockerfile"
   }
 }
