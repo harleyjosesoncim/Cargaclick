@@ -15,7 +15,7 @@ git commit -m "Reestrutura backend com pastas mínimas e força Docker"
 git push origin main
 
 echo === [4/4] Abrindo Railway para monitorar o deploy ===
-start https://railway.app/project/fa3a8fa6-9d3d-4714-863a-25461c385549?environmentId=6fde1f36-5e25-4e7d-99bd-3dbfc4f959f5
+start https://railway.com/project/fa3a8fa6-9d3d-4714-863a-25461c385549/service/37e41c40-497b-4911-afca-0d98deead3f2?environmentId=6fde1f36-5e25-4e7d-99bd-3dbfc4f959f5&id=eaa628f5-ded4-4758-996b-e493a359508d#build
 
 echo === PRONTO! Verifique o build no Railway ===
 pause
