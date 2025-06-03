@@ -1,0 +1,32 @@
+<div class="max-w-xl mx-auto p-6 bg-white rounded shadow-md">
+  <h1 class="text-2xl font-bold mb-4">Cadastrar Transportador</h1>
+  <%= form_with(model: @transportador, url: admin_transportadors_path, local: true, class: "space-y-4") do |form| %>
+    <div>
+      <%= form.label :nome, class: "block font-medium" %>
+      <%= form.text_field :nome, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :cpf, class: "block font-medium" %>
+      <%= form.text_field :cpf, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :tipo_veiculo, class: "block font-medium" %>
+      <%= form.text_field :tipo_veiculo, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :carga_transportada, class: "block font-medium" %>
+      <%= form.text_field :carga_transportada, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :cep, class: "block font-medium" %>
+      <%= form.text_field :cep, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.label :valor_km, class: "block font-medium" %>
+      <%= form.number_field :valor_km, step: 0.01, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+    </div>
+    <div>
+      <%= form.submit "Salvar", class: "bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded" %>
+    </div>
+  <% end %>
+</div>

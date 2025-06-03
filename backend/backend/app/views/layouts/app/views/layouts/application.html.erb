@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CargoLink</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application.tailwind", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow p-4 mb-4">
+      <h1 class="text-2xl font-bold text-center">CargoLink</h1>
+      <% if user_signed_in? %>
+        <div class="text-center mt-2 text-gray-600">
+          Logado como: <%= current_user.email %> (<%= current_user.role.titleize %>)
+        </div>
+      <% end %>
+    </header>
+
+    <main class="container mx-auto px-4">
+      <%= yield %>
+    </main>
+
+    <footer class="text-center text-sm text-gray-500 mt-8 mb-4">
+      &copy; 2025 CargoLink
+    </footer>
+  </body>
+</html>

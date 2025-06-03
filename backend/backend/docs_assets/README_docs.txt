@@ -1,0 +1,1 @@
+Este pacote contém todos os assets de identidade visual, instruções de instalação e licenciamento do projeto CargaClick.

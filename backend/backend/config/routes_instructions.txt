@@ -1,0 +1,5 @@
+# Adicione ao seu config/routes.rb dentro do namespace :admin
+
+namespace :admin do
+  resources :transportadores
+end

@@ -1,0 +1,1 @@
+create_table :pontuacoes do |t| ... end

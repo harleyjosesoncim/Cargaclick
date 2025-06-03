@@ -1,0 +1,27 @@
+<h1>Simulação de Frete para <%= @cliente.nome %></h1>
+<p><strong>CEP Destino:</strong> <%= @cliente.cep_destino %></p>
+<p><strong>Tipo de Carga:</strong> <%= @cliente.tipo_carga %></p>
+
+<h2>Transportadores Disponíveis</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Tipo Veículo</th>
+      <th>Distância (km)</th>
+      <th>Valor Estimado (R$)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resultados.each do |r| %>
+      <tr>
+        <td><%= r[:nome] %></td>
+        <td><%= r[:tipo_veiculo] %></td>
+        <td><%= r[:distancia] %></td>
+        <td>R$ <%= r[:preco] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Voltar para Clientes', admin_clientes_path %>

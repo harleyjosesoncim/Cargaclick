@@ -1,0 +1,14 @@
+
+<h2>Transportadores Encontrados</h2>
+<% if @transportadores.any? %>
+  <ul>
+    <% @transportadores.each do |t| %>
+      <li>
+        <%= t.nome %> - <%= t.tipo_veiculo %> - R$ <%= t.preco_km %>/km - Nota: <%= t.media_avaliacoes %>
+        <%= link_to "Ver Perfil", transportador_path(t) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Nenhum transportador encontrado com os filtros informados.</p>
+<% end %>

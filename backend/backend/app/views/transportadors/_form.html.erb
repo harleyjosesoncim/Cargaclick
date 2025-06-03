@@ -1,0 +1,39 @@
+<%= form_with model: @transportador do |f| %>
+  <%= f.label :forma_recebimento %>
+  <%= f.select :forma_recebimento, Transportador.forma_recebimentos.keys.map { |w| [w.humanize, w] }, prompt: 'Selecione' %>
+
+  <div id="pix_fields" style="display:none;">
+    <%= f.label :chave_pix %>
+    <%= f.text_field :chave_pix %>
+  </div>
+
+  <div id="transferencia_fields" style="display:none;">
+    <%= f.label :banco %>
+    <%= f.text_field :banco %>
+    <%= f.label :agencia %>
+    <%= f.text_field :agencia %>
+    <%= f.label :conta %>
+    <%= f.text_field :conta %>
+    <%= f.label :tipo_conta %>
+    <%= f.select :tipo_conta, [['Corrente', 'corrente'], ['Poupança', 'poupanca']] %>
+  </div>
+
+  <%= f.submit 'Salvar' %>
+<% end %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const formaRecebimento = document.querySelector('#transportador_forma_recebimento');
+    const pixFields = document.getElementById('pix_fields');
+    const transferenciaFields = document.getElementById('transferencia_fields');
+
+    function toggleFields() {
+      const value = formaRecebimento.value;
+      pixFields.style.display = value === 'pix' ? 'block' : 'none';
+      transferenciaFields.style.display = value === 'transferencia' ? 'block' : 'none';
+    }
+
+    formaRecebimento.addEventListener('change', toggleFields);
+    toggleFields();
+  });
+</script>
