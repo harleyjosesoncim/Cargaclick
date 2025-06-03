@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 Rails.application.routes.draw do
   root 'application#index'
+  get "/transportadores/filtros", to: "transportadores#filtros"
+  post "/transportadores/buscar", to: "transportadores#buscar"
+  # Adicione aqui outras rotas necessárias, como recursos de clientes, fretes, etc.
 end
-=======
 
-get "/transportadores/filtros", to: "transportadores#filtros"
-post "/transportadores/buscar", to: "transportadores#buscar"
->>>>>>> bd08dc42873a39f711f72b80364c044d57f9016b
