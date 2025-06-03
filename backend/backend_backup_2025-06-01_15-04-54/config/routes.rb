@@ -1,1 +1,0 @@
-# Arquivo de rotas do Rails. Exemplo: namespace :api do ... end

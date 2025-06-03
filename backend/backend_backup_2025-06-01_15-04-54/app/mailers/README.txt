@@ -1,1 +1,0 @@
-# Coloque aqui os mailers de notificação (Rails)
