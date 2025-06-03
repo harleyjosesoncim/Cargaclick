@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 { "build": { "dockerfilePath": "Dockerfile" } }
+=======
+{
+  "build": {
+    "builder": "docker"
+  }
+}
+>>>>>>> 6fe9caa1aa84837fbb7bcc8ed0afb712c6086dcc
