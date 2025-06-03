@@ -1,5 +1,7 @@
 {
   "build": {
-    "builder": "docker"
+    "env": {
+      "RAILS_ENV": "production"
+    }
   }
 }
