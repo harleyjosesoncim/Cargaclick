@@ -1,6 +1,11 @@
 FROM ruby:3.2
 
-RUN apt-get update -qq && apt-get install -y echo   build-essential echo   nodejs echo   yarn echo   sqlite3 echo   libsqlite3-dev
+RUN apt-get update -qq && apt-get install -y \
+  build-essential \
+  nodejs \
+  yarn \
+  sqlite3 \
+  libsqlite3-dev
 
 WORKDIR /app
 COPY . .
