@@ -32,4 +32,29 @@ echo 3. Depois rode:
 echo    bundle install
 echo    $env:RAILS_ENV="production"; bundle exec rake assets:precompile
 echo =======================================
+@echo off
+SETLOCAL
+
+REM Caminho até a pasta do backend
+cd /d C:\Users\User\Documents\cargaclik\backend
+
+echo === Atualizando código do GitHub ===
+git pull origin main
+
+echo === Instalando dependências com Bundler ===
+bundle install
+
+echo === Aplicando migrações do banco de dados ===
+bundle exec rails db:migrate
+
+echo === Iniciando o servidor Rails ===
+start cmd /k "bundle exec rails s -b 0.0.0.0 -p 3000"
+
+echo === Abrindo Railway no navegador ===
+start https://railway.app/project/fa3a8fa6-9d3d-4714-863a-25461c385549
+
+echo === Deploy local do CargaClik em andamento... ===
+
+ENDLOCAL
+pause
 pause

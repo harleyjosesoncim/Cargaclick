@@ -1,3 +1,0 @@
-
-gem 'devise'
-gem 'rails_admin', '~> 3.0'
